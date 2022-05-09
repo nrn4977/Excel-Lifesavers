@@ -1,0 +1,26 @@
+Sub HideGridlines()
+'
+' HideGridlines Macro
+'
+Dim ws As Worksheet
+'hide gridlines in a workbook
+For Each ws In Worksheets
+ws.Activate
+ActiveWindow.DisplayGridlines = False
+Next ws
+End Sub
+
+Sub ConvertSelectedCellRangetoNumber()
+'
+' ConvertSelectedCellRangetoNumber Macro
+' Select the first cell in the desired column, then run macro. The rest of the column will convert to number.
+'
+
+'
+Range(Selection, Selection.End(xlDown)).Select
+    With Selection
+    .NumberFormat = "General"
+    .Value = .Value
+    End With
+    
+End Sub
